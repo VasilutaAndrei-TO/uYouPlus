@@ -65,11 +65,11 @@ before-all::
 before-all::
 	@if [[ ! -f $(UYOU_DEB) ]]; then \
 		$(PRINT_FORMAT_BLUE) "Downloading uYou1"; \
- 		curl -s https://drive.usercontent.google.com/download?id=1L7febSx9x1q5zEvbaViqHcuS8Kt13j6D&export=download&authuser=0&confirm=t&uuid=456c87d5-931b-4174-9fbd-f7cc4e1fa0a1&at=AENtkXY8pF_Ez3hBl43BbBzSVz15%3A1732045124025 -o Tweaks/uYou/com.miro.uyou_3.0.4_iphoneos-arm.deb; \
+ 		curl -s https://repo.miro92.com/debs/com.miro.uyou_3.0.4_iphoneos-arm.deb -o $(UYOU_DEB); \
  	fi; \
 	if [[ ! -f $(UYOU_DYLIB) || ! -d $(UYOU_BUNDLE) ]]; then \
 		$(PRINT_FORMAT_BLUE) "Downloading uYou2"; \
-		tar -xf Tweaks/uYou/com.miro.uyou_$(UYOU_VERSION)_iphoneos-arm.deb -C Tweaks/uYou; tar -xf Tweaks/uYou/data.tar* -C Tweaks/uYou; \
+		tar -xf Tweaks/uYou/com.miro.uyou_3.0.4_iphoneos-arm.deb -C Tweaks/uYou; tar -xf Tweaks/uYou/data.tar* -C Tweaks/uYou; \
 		if [[ ! -f $(UYOU_DYLIB) || ! -d $(UYOU_BUNDLE) ]]; then \
 			$(PRINT_FORMAT_ERROR) "Failed to extract uYou"; exit 1; \
 		fi; \
