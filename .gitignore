@@ -3,6 +3,7 @@
 packages/
 tmp/
 !Tweaks/uYou/.gitkeep
+!Tweaks/uYou/*.deb
 Resources/
 *.ipa
 .vscode
